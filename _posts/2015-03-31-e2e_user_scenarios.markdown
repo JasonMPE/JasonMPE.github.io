@@ -3,7 +3,7 @@ layout:     post
 title:      "Definition of End to End User Scenarios"
 subtitle:   "Paper wrote on my birthday"
 date:       2015-03-31 
-author:     "Hux"
+author:     "Jason"
 header-img: "img/post-bg-e2e-ux.jpg"
 tags:
     - 交互设计
@@ -76,4 +76,6 @@ That's all, thank you.
 4.<a id="ref4">[How to Create User Stories, Scenarios, and Cases](https://www.newfangled.com/how-to-tell-the-users-story/)</a>
 
 5.<a id="ref5">[Designing end-to-end user experiences. | 90 Percent Of Everything](http://www.90percentofeverything.com/2008/11/11/designing-end-to-end-user-experiences/)</a>
+
+>本文转自Hux(http://weibo.com/huxpro)
 

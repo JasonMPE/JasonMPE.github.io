@@ -75,36 +75,24 @@ header-img: "img/home_bg1.jpg"
 </script>-->
 
 
-<!--{% if site.useDuoshuo %}-->
+{% if site.useDuoshuo %}
 <!-- 多说评论框 start -->
- <!--   <div class="comment">
+  <div class="comment">
         <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{site.url}}/about/"></div>
-    </div>-->
+  </div>
 <!-- 多说评论框 end -->
 
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<!--<script type="text/javascript">
-var duoshuoQuery = {short_name:"huxblog"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>-->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"jasonmpe"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
 <!-- 多说公共JS代码 end -->
-<!--{% endif %}-->
-
-
-<!-- Begin Comments JavaScript Code -->
-<script type="text/javascript" async>
-    function ajaxpath_55faf1353ac95(url){
-    return window.location.href == '' ? url : url.replace('&s=','&s=' + escape(window.location.href));
-    }
-    (function(){
-    document.write('<div id="fcs_div_55faf1353ac95"><a title="free comment script" href="http://www.freecommentscript.com">&nbsp;&nbsp;<b>Free HTML User Comments</b>...</a></div>');
-    fcs_55faf1353ac95=document.createElement('script');fcs_55faf1353ac95.type="text/javascript";fcs_55faf1353ac95.src=ajaxpath_55faf1353ac95((document.location.protocol=="https:"?"https:":"http:")+"//www.freecommentscript.com/GetComments2.php?p=55faf1353ac95&s=&Size=10#!55faf1353ac95");setTimeout("document.getElementById('fcs_div_55faf1353ac95').appendChild(fcs_55faf1353ac95)",1);})();</script><noscript><div><a href="http://www.freecommentscript.com" title="free html user comment box">Free Comment Script</a></div></noscript>
-    <!-- End Comments JavaScript Code -->
-
+{% endif %}

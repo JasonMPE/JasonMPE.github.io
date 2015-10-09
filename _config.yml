@@ -9,7 +9,7 @@ url: "http://jasonmpe.github.io"
 
 # SNS settings
 RSS: false
-#weibo_username:     2092105933/profile?rightmod=1&wvr=6&mod=personinfo
+weibo_username:     2092105933/profile?rightmod=1&wvr=6&mod=personinfo
 github_username:    JasonMPE
 linkedin_username: profile/view?id=AAIAABV0gd8B636mZVhWSiPL1N5F5zS4D7a9xqI&trk=nav_responsive_tab_profile
 #zhihu_username: wang-jason-90

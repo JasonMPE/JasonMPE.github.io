@@ -13,13 +13,78 @@ layout: default
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script src="js/modernizr.custom.js"></script>
+		
+		<!-- avatar rotation-->
+		<style>
+			#avatar {
+			  width: 100%;
+			  height: 100%;
+			  margin: 55px auto 35px;
+			  background: url(/assets/img/avatar120.jpg);
+			  border-radius: 50%;
+			  box-shadow: 0 0 0px 4px white, 0 0 4px 4px #eee;
+			  overflow: hidden;
+			  display: block; 
+			}
+		  #avatar:hover {
+			-webkit-animation: spin 4s linear infinite;
+			-moz-animation: spin 4s linear infinite;
+			-ms-animation: spin 4s linear infinite;
+			-o-animation: spin 4s linear infinite;
+			animation: spin 4s linear infinite; 
+		  }
+		  
+		  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+			#avatar {
+			  background: url(/assets/img/avatar120@2X.jpg);
+			  -webkit-background-size: 120px 120px;
+			  -moz-background-size: 120px 120px;
+			  background-size: 100px 120px; } }
+			  
+			@-webkit-keyframes spin {
+			  from {
+				-webkit-transform: rotate(0deg); }
+
+			  to {
+				-webkit-transform: rotate(359deg); } }
+
+			@-moz-keyframes spin {
+			  from {
+				-moz-transform: rotate(0deg); }
+
+			  to {
+				-moz-transform: rotate(359deg); } }
+
+			@-o-keyframes spin {
+			  from {
+				-o-transform: rotate(0deg); }
+
+			  to {
+				-o-transform: rotate(359deg); } }
+
+			@-ms-keyframes spin {
+			  from {
+				-ms-transform: rotate(0deg); }
+
+			  to {
+				-ms-transform: rotate(359deg); } }
+
+			@keyframes spin {
+			  from {
+				transform: rotate(0deg); }
+
+			  to {
+				transform: rotate(359deg); } }
+		
+<!-- tutorial: http://peqiu.com/blog/rotate-your-avatar.html-->
+		</style>
 	</head>
 	<body>
 		<div class="container" style="margin:0;padding:0;width:100%;">
 			<header class="clearfix">
 				<!--<img src="images/hux_avatar.png">
 				<p><img src="images/hux_name.png"></p>-->
-				<img src="images/avatar-jason.png" style="border-radius:100%;display: block;margin:0 auto;"/>
+				<img src="images/avatar-jason.png" style="border-radius:100%;display: block;margin:0 auto;" id="avatar"/>
 				<!--<img src="images/avatar-jason.png">-->
 				<!--<h2>Jason Wang</h2>-->
 				<p>Web Developer & Software Engineer</p>

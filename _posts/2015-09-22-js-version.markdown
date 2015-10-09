@@ -3,7 +3,7 @@ layout:     post
 title:      "ES5, ES6, ES2016, ES.Next: JavaScript 的版本是怎么回事？「译」"
 subtitle:   "ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?"
 date:       2015-09-22
-author:     "Jaoson"
+author:     "Jason"
 header-img: "img/post-bg-js-version.jpg"
 tags:
     - 前端开发
@@ -62,5 +62,5 @@ JavaScript 有着很奇怪的命名史。
 
 #### 著作权声明
 
->本文转自Hux(http://weibo.com/huxpro)
+>本文转自[Hux](http://weibo.com/huxpro)
 

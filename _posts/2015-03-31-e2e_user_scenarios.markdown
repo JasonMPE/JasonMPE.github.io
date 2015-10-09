@@ -77,5 +77,5 @@ That's all, thank you.
 
 5.<a id="ref5">[Designing end-to-end user experiences. | 90 Percent Of Everything](http://www.90percentofeverything.com/2008/11/11/designing-end-to-end-user-experiences/)</a>
 
->本文转自Hux(http://weibo.com/huxpro)
+>本文转自[Hux](http://weibo.com/huxpro)
 

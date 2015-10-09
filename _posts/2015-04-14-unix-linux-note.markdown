@@ -228,5 +228,5 @@ Chrome OS is based on Chromium OS, which is the open-source development version 
 
 For Detail, Chromium OS based on [Gentoo Linux](http://en.wikipedia.org/wiki/Gentoo_Linux), emm...
 
->本文转自Hux(http://weibo.com/huxpro)
+>本文转自[Hux](http://weibo.com/huxpro)
 

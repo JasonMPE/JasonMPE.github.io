@@ -6,7 +6,7 @@ date:       2015-09-22
 author:     "Jason"
 header-img: "img/post-bg-js-version.jpg"
 tags:
-    - Front-endS
+    Front-end
 ---
 
 

@@ -9,29 +9,29 @@ tags:
 
     Front-end
 ---
-Gordon L. Hempton是西雅图的一位黑客和设计师，他花费了几个月的时间研究和比较了12种流行的JavaScript MVC框架，并在[博客](http://codebrief.com/2012/01/the-top-10-javascript-mvc-frameworks-reviewed/)
-中总结了每种框架的优缺点，最终的结果是，Ember.js胜出。
+Gordon L. Hempton是西雅图的一位黑客和设计师，他花费了几个月的时间研究和比较了12种流行的JavaScript MVC框架，并在[博客](http://codebrief.com/2012/01/the-top-10-javascript-mvc-frameworks-reviewed/)中总结了每种框架的优缺点，最终的结果是，Ember.js胜出。
 
 此次比较针对的特性标准有四种，分别是：
 
--UI绑定（UI Bindings）
--复合视图（Composed Views）
--Web表现层（Web Presentation Layer）
--与其他框架良好协作（Plays Nicely with Others）
--对于各种JavaScript MVC框架，Gordon都总结了优缺点：
+**UI绑定*（UI Bindings）
+**复合视图*（Composed Views）
+**Web表现层*（Web Presentation Layer）
+**与其他框架良好协作*（Plays Nicely with Others）
 
--Backbone.js——优点：强大的社区，强劲的势头；缺点：抽象较弱，很多功能亟待增加。
--SproutCore——优点：对绑定的支持，可靠的社区，大量特性；缺点：过度规范，难以和不需要的特性解耦。
--Sammy.js——优点：易于学习，更容易和现存的服务端应用程序整合；缺点：过于简单，无法应用于大型应用程序中。
--Spine.js——优点：轻量级，文档很完备；缺点：它的核心概念“spine”是异步的用户界面，这意味着理想状况用户界面永远不会发生堵塞，而这个基础有缺陷。
--Cappuccino——优点：大型深思熟虑后的框架，良好的社区，很棒的继承模型；缺点：由iOS开发者创建，使用JavaScript模拟Objective-C。
--Knockout.js——优点：对绑定的支持，完备的文档和教程；缺点：绑定语法拙劣，缺少统一的视图组件层级关系。
--Javascript MVC——优点：可靠的社区；缺点：基于字符串的继承模型很差，控制器与视图关系过密而缺少绑定。
--GWT（Google Web Toolkit）——优点：全面的框架，良好的社区，可靠的基于Java的组件继承模型；缺点：可能无法经受时间的考验，另外，Java在客户端上的抽象有些笨拙。
--Google Closure——优点：很好的基于组件的UI组合系统。缺点：缺少UI绑定支持。
--Ember.js——优点：很丰富的模板系统，拥有复合视图和UI绑定；缺点：相对较新，文档不够完备。
--Angular.js——优点：对模板范围和控制器设计有很好的考虑，拥有依赖注入系统，支持丰富的UI绑定语法。缺点：代码的模块性不强，视图的模块化也不够。
--Batman.js——优点：代码清晰，绑定、持久化的方法简单；缺点：使用了单例控制器。
+对于各种JavaScript MVC框架，Gordon都总结了优缺点：
+
+* **Backbone.js**——优点：强大的社区，强劲的势头；缺点：抽象较弱，很多功能亟待增加。
+* **SproutCore**——优点：对绑定的支持，可靠的社区，大量特性；缺点：过度规范，难以和不需要的特性解耦。
+* **Sammy.js**——优点：易于学习，更容易和现存的服务端应用程序整合；缺点：过于简单，无法应用于大型应用程序中。
+* **Spine.js**——优点：轻量级，文档很完备；缺点：它的核心概念“spine”是异步的用户界面，这意味着理想状况用户界面永远不会发生堵塞，而这个基础有缺陷。
+* **Cappuccino**——优点：大型深思熟虑后的框架，良好的社区，很棒的继承模型；缺点：由iOS开发者创建，使用JavaScript模拟Objective-C。
+* **Knockout.js**——优点：对绑定的支持，完备的文档和教程；缺点：绑定语法拙劣，缺少统一的视图组件层级关系。
+* **Javascript MVC**——优点：可靠的社区；缺点：基于字符串的继承模型很差，控制器与视图关系过密而缺少绑定。
+* **GWT（Google Web Toolkit）**——优点：全面的框架，良好的社区，可靠的基于Java的组件继承模型；缺点：可能无法经受时间的考验，另外，Java在客户端上的抽象有些笨拙。
+* **Google Closure**——优点：很好的基于组件的UI组合系统。缺点：缺少UI绑定支持。
+* **Ember.js**——优点：很丰富的模板系统，拥有复合视图和UI绑定；缺点：相对较新，文档不够完备。
+* **Angular.js**——优点：对模板范围和控制器设计有很好的考虑，拥有依赖注入系统，支持丰富的UI绑定语法。缺点：代码的模块性不强，视图的模块化也不够。
+* **Batman.js**——优点：代码清晰，绑定、持久化的方法简单；缺点：使用了单例控制器。
 
 经过对以上各种Javascript MVC框架特性的比较，Gordon认为只有Ember.js能够完全满足他的要求，从而成为他最终选用的框架。
 

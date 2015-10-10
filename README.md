@@ -1,6 +1,4 @@
-#Hux Blog
-
-###[View Live Hux Blog &rarr;](http://huxpro.github.io)
+#引用自Hux Blog
 
 ![](http://huangxuan.me/img/blog-desktop.jpg)
 

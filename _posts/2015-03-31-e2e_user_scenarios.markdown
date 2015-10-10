@@ -7,7 +7,7 @@ author:     "Jason"
 header-img: "img/post-bg-e2e-ux.jpg"
 tags:
 
-    - UX Design
+    UX Design
 ---
 
 

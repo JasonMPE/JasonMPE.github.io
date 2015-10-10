@@ -6,8 +6,7 @@ date:       2015-05-25
 author:     "Jason"
 header-img: "img/post-bg-js-module.jpg"
 tags:
-    - 前端开发
-    - JavaScript
+    - Front-end
 ---
 
 

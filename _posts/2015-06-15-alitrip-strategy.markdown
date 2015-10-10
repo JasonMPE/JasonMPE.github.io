@@ -6,10 +6,7 @@ date:       2015-06-15
 author:     "Jason"
 header-img: "img/post-bg-alitrip.jpg"
 tags:
-    - 产品设计
-    - 阿里巴巴
-    - 在线旅行
-    - 电子商务
+    - Product Design
 ---
 > 本篇为该系列第一篇 —— 行业与战略，让我们聊聊行业、战略与格局。
 

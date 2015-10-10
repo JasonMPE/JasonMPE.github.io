@@ -13,10 +13,10 @@ Gordon L. Hempton是西雅图的一位黑客和设计师，他花费了几个月
 
 此次比较针对的特性标准有四种，分别是：
 
-***UI绑定**（UI Bindings）
-***复合视图**（Composed Views）
-***Web表现层**（Web Presentation Layer）
-***与其他框架良好协作**（Plays Nicely with Others）
+* **UI绑定**（UI Bindings）
+* **复合视图**（Composed Views）
+* **Web表现层**（Web Presentation Layer）
+* **与其他框架良好协作**（Plays Nicely with Others）
 
 对于各种JavaScript MVC框架，Gordon都总结了优缺点：
 

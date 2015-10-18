@@ -1,0 +1,215 @@
+---
+layout:     post
+title:      "Node.js模块之require和 exports"
+subtitle:   "Node.js初级入门篇"
+date:       2015-10-17 
+author:     "Jason"
+header-img: "img/pbg-nodejs.png"
+tags:
+
+    back-end
+---
+
+###什么是模块?
+
+<p>node.js通过实现CommonJS的Modules/1.0标准引入了模块(module)概念,模块是Node.js的基本组成部分.一个node.js文件就是一个模块,也就是说文件和模块是一一对应的关系.这个文件可以是JavaScript代码,JSON或者编译过的C/C++扩展.</p>
+
+<p>Node.js的模块分为两类，一类为原生（核心）模块，一类为文件模块。</p>
+
+<p>在文件模块中，又分为3类模块。这三类文件模块以后缀来区分，Node.js会根据后缀名来决定加载方法。</p>
+
+<ul>
+	<li>js。通过fs模块同步读取js文件并编译执行。</li>
+	<li>.node。通过C/C++进行编写的Addon。通过dlopen方法进行加载</li>
+	<li>.json。读取文件，调用JSON.parse解析加载。</li>
+</ul>
+
+<p>Node.提供了exports和require两个对象,其中exports是模块公开的接口,require用于从外部获取一个模块接口,即所获取模块的exports对象.</p>
+
+
+###require查找策略
+
+<p>原生模块在Node.js源代码编译的时候编译进了二进制执行文件，加载的速度最快。另一类文件模块是动态加载的，加载速度比原生模块慢。
+但是Node.js对原生模块和文件模块都进行了缓存，于是在第二次require时，是不会有重复开销的。尽管require方法极其简单，但是内部的加载却是十分复杂的，其加载优先级也各自不同。</p>
+![img](/img/in-post/nodejs-require.jpg)
+
+require方法接受以下几种参数的传递：
+<ul>
+	<li>http、fs、path等，原生模块。</li>
+	<li>./mod或../mod，相对路径的文件模块。</li>
+	<li>/pathtomodule/mod，绝对路径的文件模块。</li>
+	<li>mod，非原生模块的文件模块。</li>
+</ul>
+
+<p>当require一个文件模块时,从当前文件目录开始查找node_modules目录；然后依次进入父目录，查找父目录下的node_modules目录；依次迭代，直到根目录下的node_modules目录。</p>
+
+<p>简而言之，如果require绝对路径的文件，查找时不会去遍历每一个node_modules目录，其速度最快。其余流程如下：</p>
+<ol>
+	<li>从module path数组中取出第一个目录作为查找基准。</li>
+	<li>直接从目录中查找该文件，如果存在，则结束查找。如果不存在，则进行下一条查找。</li>
+	<li>尝试添加.js、.json、.node后缀后查找，如果存在文件，则结束查找。如果不存在，则进行下一条。</li>
+	<li>尝试将require的参数作为一个包来进行查找，读取目录下的package.json文件，取得main参数指定的文件。</li>
+	<li>尝试查找该文件，如果存在，则结束查找。如果不存在，则进行第3条查找。</li>
+	<li>如果继续失败，则取出module path数组中的下一个目录作为基准查找，循环第1至5个步骤。</li>
+	<li>如果继续失败，循环第1至6个步骤，直到module path中的最后一个值。</li>
+	<li>如果仍然失败，则抛出异常。</li>
+</ol>
+
+###module.exports还是exports
+<p>我们首先通过一个例子来介绍exports的作用.首先新建一个模块calc.js,代码如下:</p>
+``` 
+var add = function(a,b){
+	return a + b;
+};
+
+var minus = function(a,b){
+	return a - b;
+};
+```
+
+再新建一个test.js文件,代码如下 :
+```
+var calc = require("./calc");  
+
+console.log(calc.add(1,2));
+```
+
+然后我们在Terminal中执行,发出现如下出错:
+```
+/Users/Liuzc/Desktop/node/text.js:3
+console.log(calc.add(1,2));
+^
+TypeError: Object #<Object> has no method ‘add’
+at Object.<anonymous> (/Users/Liuzc/Desktop/node/text.js:3:18)
+at Module._compile (module.js:456:26)
+at Object.Module._extensions..js (module.js:474:10)
+at Module.load (module.js:356:32)
+at Function.Module._load (module.js:312:12)
+at Function.Module.runMain (module.js:497:10)
+at startup (node.js:119:16)
+at node.js:901:3
+````
+这时我们修改一下calc.js的代码:
+```
+var add = function(a,b){
+	return a + b;
+};
+
+var minus = function(a,b){
+	return a - b;
+};
+
+exports.add = add;
+exports.minus = minus;
+```
+
+再次在Terminal中执行node test.js时.正确的显示了结果.
+
+```
+Liuzcs-MacBook-Pro:node Liuzc$ node text.js
+3
+```
+
+<p>一个模块可以通过module.exports或exports将函数、变量等导出，以使其它JavaScript脚本通过require()函数引入并使用。</p>
+
+那么,到底应该用module.exports还是用exports呢？我们先看下面的一个例子:
+
+```
+console.log(this);
+console.log(exports);
+console.log(module.exports);
+
+console.log(this === exports);
+console.log(this === module.exports);
+console.log(exports === module.exports);
+```
+
+执行结果是:
+```
+{}
+{}
+{}
+true
+true
+true
+```
+
+也就是说,exports默认和module.exports指向同一个空对象。
+
+再看一个例子.calc.js中有代码如下:
+
+```
+exports.add = function(a,b){
+	return a + b;
+}
+
+module.exports.add = function(a,b){
+	return a - b;
+}
+```
+
+这时猜猜执行test.js中的如下代码的结果将会是什么?
+```
+var calc = require("./calc");  
+
+console.log(calc.add(4,2));
+```
+<p>对, 结果是2, 而不是6.也就是说如果运行时让exports、this和module.exports指向不同的对象，只有module.exports指向的对象才回被导出。
+module.exports才是真正的接口，exports只不过是它的一个辅助工具。 最终返回给调用的是module.exports而不是exports。 
+所有的exports收集到的属性和方法，都赋值给了module.exports。当然，这有个前提，就是module.exports本身不具备任何属性和方法。
+如果，module.exports已经具备一些属性和方法，那么exports收集来的信息将被忽略。</p>
+
+<p>如果你想你的模块是一个特定的类型就用module.exports。如果你想的模块是一个典型的“实例化对象”就用exports。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

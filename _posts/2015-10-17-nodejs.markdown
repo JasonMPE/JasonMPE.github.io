@@ -4,7 +4,7 @@ title:      "Node.js模块之require和 exports"
 subtitle:   "Node.js初级入门篇"
 date:       2015-10-17 
 author:     "Jason"
-header-img: "img/pbg-nodejs.png"
+header-img: "img/bg-nodejs.png"
 tags:
 
     back-end
@@ -57,6 +57,7 @@ require方法接受以下几种参数的传递：
 
 ### module.exports还是exports
 <p>我们首先通过一个例子来介绍exports的作用.首先新建一个模块calc.js,代码如下:</p>
+
 ``` 
 var add = function(a,b){
 	return a + b;
@@ -67,7 +68,8 @@ var minus = function(a,b){
 };
 ```
 
-再新建一个test.js文件,代码如下 :
+再新建一个test.js文件,代码如下:
+
 ```
 var calc = require("./calc");  
 
@@ -92,6 +94,7 @@ at node.js:901:3
 
 ````
 这时我们修改一下calc.js的代码:
+
 ```
 var add = function(a,b){
 	return a + b;

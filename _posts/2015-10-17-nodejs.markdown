@@ -10,7 +10,7 @@ tags:
     back-end
 ---
 
-###什么是模块?
+### 什么是模块?
 
 <p>node.js通过实现CommonJS的Modules/1.0标准引入了模块(module)概念,模块是Node.js的基本组成部分.一个node.js文件就是一个模块,也就是说文件和模块是一一对应的关系.这个文件可以是JavaScript代码,JSON或者编译过的C/C++扩展.</p>
 
@@ -27,7 +27,7 @@ tags:
 <p>Node.提供了exports和require两个对象,其中exports是模块公开的接口,require用于从外部获取一个模块接口,即所获取模块的exports对象.</p>
 
 
-###require查找策略
+### require查找策略
 
 <p>原生模块在Node.js源代码编译的时候编译进了二进制执行文件，加载的速度最快。另一类文件模块是动态加载的，加载速度比原生模块慢。
 但是Node.js对原生模块和文件模块都进行了缓存，于是在第二次require时，是不会有重复开销的。尽管require方法极其简单，但是内部的加载却是十分复杂的，其加载优先级也各自不同。</p>
@@ -55,7 +55,7 @@ require方法接受以下几种参数的传递：
 	<li>如果仍然失败，则抛出异常。</li>
 </ol>
 
-###module.exports还是exports
+### module.exports还是exports
 <p>我们首先通过一个例子来介绍exports的作用.首先新建一个模块calc.js,代码如下:</p>
 ``` 
 var add = function(a,b){
@@ -75,6 +75,7 @@ console.log(calc.add(1,2));
 ```
 
 然后我们在Terminal中执行,发出现如下出错:
+
 ```
 /Users/Liuzc/Desktop/node/text.js:3
 console.log(calc.add(1,2));
@@ -88,6 +89,7 @@ at Function.Module._load (module.js:312:12)
 at Function.Module.runMain (module.js:497:10)
 at startup (node.js:119:16)
 at node.js:901:3
+
 ````
 这时我们修改一下calc.js的代码:
 ```
@@ -125,6 +127,7 @@ console.log(exports === module.exports);
 ```
 
 执行结果是:
+
 ```
 {}
 {}
@@ -149,6 +152,7 @@ module.exports.add = function(a,b){
 ```
 
 这时猜猜执行test.js中的如下代码的结果将会是什么?
+
 ```
 var calc = require("./calc");  
 
@@ -160,6 +164,8 @@ module.exports才是真正的接口，exports只不过是它的一个辅助工�
 如果，module.exports已经具备一些属性和方法，那么exports收集来的信息将被忽略。</p>
 
 <p>如果你想你的模块是一个特定的类型就用module.exports。如果你想的模块是一个典型的“实例化对象”就用exports。</p>
+
+本文参考：[liuzhichao's blog](http://liuzhichao.com/p/1669.html)
 
 
 

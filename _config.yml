@@ -71,5 +71,8 @@ friends: [
     },{
         title: "Riny",
         href: "http://riny.net"
+    },{
+        title: "WilliamLong", 
+        href: "http://www.williamlong.info/"
     }
 ]
